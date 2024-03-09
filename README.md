@@ -1,3 +1,6 @@
-Scientific Calculator<br>
-No InBuilt Function is used 
-<br>
+##Scientific Calculator##
+-----------------------
+>No InBuilt Function is used
+
+>We tried to define all the functions by ourselves 
+
