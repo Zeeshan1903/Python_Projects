@@ -1,13 +1,16 @@
 variable = input('Enter the input for which you want the differentiation: ')
-print('Use the bracket if you are using the power function (power fn)')
-print("For power use ---> ^") 
-print('Decimal representation is not yet been implemented so try not to give the input in the decimal representation')
-print('For cube root write 0.3333 this will give you the best approximation')
+print()
+print(f"{'Decimal representation is not yet been implemented so try not to give the input in the decimal representation' :^190}")
+print(f"{'Use the bracket if you are using the power function (power fn)':^190}")
+print()
 
-print('S : for sine')
-print('C : for cos')
-print('T : for tan')
-print('Always enter the angle in radian')
+print(f"{'For cube root write 0.3333 this will give you the best approximation' :^190}")
+print(f"{'Always enter the angle in radian':^190}")
+print(f"{'For power use ---> ^':^190}") 
+print()
+print(f"{'S : for sine':^190}")
+print(f"{'C : for cos':^190}")
+
 print('\n\n')
 ##Defining the power function
 
