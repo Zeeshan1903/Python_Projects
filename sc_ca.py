@@ -3,6 +3,12 @@ print('Use the bracket if you are using the power function (power fn)')
 print("For power use ---> ^") 
 print('Decimal representation is not yet been implemented so try not to give the input in the decimal representation')
 print('For cube root write 0.3333 this will give you the best approximation')
+
+print('S : for sine')
+print('C : for cos')
+print('T : for tan')
+print('Always enter the angle in radian')
+print('\n\n')
 ##Defining the power function
 
 def power_(a,b):
@@ -13,12 +19,15 @@ def power_(a,b):
     return value
 
 def power(a,b):
+    
     if(b>=1):
         value = 1
         while(b!=0):
             value *= a
             b-=1
     elif(b == 1):
+        return 1
+    elif(b == 0):
         return 1
     else:
         value = 0
@@ -62,8 +71,7 @@ def integer_variable(s):
     try:
         if(float(s)):
             isInteger = True
-        # if(float(s)):
-        #     isInteger = True
+
     except:
         isInteger = False
     return isInteger
@@ -89,15 +97,16 @@ def checking(value_list,sign_list):
     ##traverse first for power function
     for i in range(len(sign_list)):
         if(sign_list[i] == '^'):
+
             value_list[i] = float(value_list[i])
             value_list[i+1] = float(value_list[i+1])
+
             value_list[i] = power(value_list[i],value_list[i+1])
             value_list.remove(value_list[i+1])
             sign_list.remove(sign_list[i])
-            value_list.append(0)
-            sign_list.append(0)
-    print(value_list)
-    print(sign_list)
+            value_list.append('0')
+            sign_list.append('_')
+
     
     ##traverse then for * and / function
     for i in range(len(sign_list)):
@@ -110,14 +119,11 @@ def checking(value_list,sign_list):
                 value_list[i] = multiply(value_list[i],value_list[i+1])
                 value_list.remove(value_list[i+1])
                 sign_list.remove(sign_list[i])
-                value_list.append(0)
-                sign_list.append(0)
+                value_list.append('0')
+                sign_list.append('_')
         except:
             print('Error occur maybe cannot divide by zero check your expression once')
-        
-    print(value_list)
-    print(sign_list)
-    
+
             ##traverse then for * and / function
     for i in range(len(sign_list)):
         try:
@@ -129,13 +135,11 @@ def checking(value_list,sign_list):
                 value_list[i] = divide(value_list[i],value_list[i+1])
                 value_list.remove(value_list[i+1])
                 sign_list.remove(sign_list[i])
-                value_list.append(0)
-                sign_list.append(0)
+                value_list.append('0')
+                sign_list.append('_')
         except:
             print('Error occur maybe cannot divide by zero check your expression once')
-
-    print(value_list)
-    print(sign_list)                
+             
     
                 
     for i in range(len(sign_list)):
@@ -146,8 +150,8 @@ def checking(value_list,sign_list):
             value_list[i] = (value_list[i]-value_list[i+1])
             value_list.remove(value_list[i+1])
             sign_list.remove(sign_list[i])
-            value_list.append(0)
-            sign_list.append(0)
+            value_list.append('0')
+            sign_list.append('_')
                 
     for i in value_list:
         i = float(i)
@@ -165,16 +169,14 @@ def evaluation(x):
     
     for i in x:     
         try:
-            if(float(i)):
+            if(float(i) or i == '0'):
                 a+=i
         except:
             value_list.append(a)
             sign_list.append(i)
             a = ''
     value_list.append(a)
-    print(sign_list)
-    print(value_list)
- 
+
 
     finaleValue = checking(value_list,sign_list)
 
